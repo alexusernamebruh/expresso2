@@ -1,22 +1,4 @@
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
 
 
 const biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeepe0@adobe.com","department":"Legal","gender":"Male"},
@@ -1021,22 +1003,26 @@ const biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeep
 {"id":1000,"first_name":"Merna","last_name":"Ivakhin","email":"mivakhinrr@ed.gov","department":"Human Resources","gender":"Female"}]
 
 
-const biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeepe0@adobe.com","department":"Legal","gender":"Male"},
-{"id":2,"first_name":"Roderigo","last_name":"Pointer","email":"rpointer1@google.cn","department":"Engineering","gender":"Female"},
-{"id":3,"first_name":"Auberon","last_name":"Leipelt","email":"aleipelt2@reference.com","department":"Human Resources","gender":"Male"}]
 
-const newArray =biginfo.filter(function (element) {
+const eze =biginfo.filter(function (element) {
   return (element.gender ==="Female");
 });
-console.log(newArray)
+
+router.get('/', function (req,res,next){
+  res.send(eze)
+})
+
 //q2
 const ze =biginfo.filter(function (element) {
   return (element.id);
 });
-console.log(ze)
+router.get('/', function (req,res,next){
+  res.send(ze)
+})
 //q3
 const ez=biginfo.filter(function (element) {
   return (element.department==="Human Resources")
 })
-console.log("leo dumb")
-module.exports = app;
+router.get('/', function (req,res,next){
+  res.send(ez)
+})
