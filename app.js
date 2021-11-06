@@ -19,7 +19,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-var biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeepe0@adobe.com","department":"Legal","gender":"Male"},
+const biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeepe0@adobe.com","department":"Legal","gender":"Male"},
 {"id":2,"first_name":"Roderigo","last_name":"Pointer","email":"rpointer1@google.cn","department":"Engineering","gender":"Female"},
 {"id":3,"first_name":"Auberon","last_name":"Leipelt","email":"aleipelt2@reference.com","department":"Human Resources","gender":"Male"},
 {"id":4,"first_name":"Hyacinthie","last_name":"Flintuff","email":"hflintuff3@mysql.com","department":"Sales","gender":"Male"},
@@ -1021,7 +1021,7 @@ var biginfo=[{"id":1,"first_name":"Giorgio","last_name":"Keepe","email":"gkeepe0
 {"id":1000,"first_name":"Merna","last_name":"Ivakhin","email":"mivakhinrr@ed.gov","department":"Human Resources","gender":"Female"}]
 
 
-var newArray =biginfo.filter(function (element) {
+const newArray =biginfo.filter(function (element) {
   return (element.gender ==="Female");
 });
 console.log(newArray)
